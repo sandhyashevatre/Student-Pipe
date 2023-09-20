@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Data Table</title>
+  <style>
+    /* CSS for the table */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    /* CSS for the header */
+    h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>Student Data Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>SID</th>
+        <th>Age</th>
+        <th>Course</th>
+        <th>Fees</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of Students">
+        <td>{{ student.Sname }}</td>
+        <td>{{ student.Sid }}</td>
+        <td>{{ student.dob | age }} years</td>
+        <td>{{ student.course }}</td>
+        <td>{{ student.fees | currency:'INR':'symbol':'1.2-2' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
